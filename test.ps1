@@ -9,6 +9,14 @@ if ($val -ne 3) {
     echo "PASS"
 }
 
+$val = .\adder.ps1 11 22
+if ($val -ne 33) {
+    echo "FAIL: expected 11 + 22 = 33"
+    $anyTestFailed = $True
+} else {
+    echo "PASS"
+}
+
 if ($anyTestFailed) {
     exit 1
 }
