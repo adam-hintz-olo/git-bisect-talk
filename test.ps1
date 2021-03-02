@@ -17,6 +17,17 @@ if ($val -ne 33) {
     echo "PASS"
 }
 
+$val = .\adder.ps1 100 222
+if ($val -ne 322) {
+    echo "FAIL: expected 100 + 222 = 322"
+    $anyTestFailed = $True
+} else {
+    echo "PASS"
+}
+
+
 if ($anyTestFailed) {
+    # The exit code guides `git bisect` to know that if tests fail, this commit
+    # is considered bad
     exit 1
 }
