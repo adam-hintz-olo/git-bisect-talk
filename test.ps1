@@ -25,7 +25,6 @@ if ($val -ne 322) {
     echo "PASS"
 }
 
-
 if ($anyTestFailed) {
     # The exit code guides `git bisect` to know that if tests fail, this commit
     # is considered bad
